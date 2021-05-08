@@ -12,7 +12,7 @@
 
 # What is coldJS?
 
-A user friendly wapper of discord.js lib for a fresh start in bot developing.
+A user friendly wrapper of discord.js lib for a fresh start in bot developing.
 
 
 ## What we have?
