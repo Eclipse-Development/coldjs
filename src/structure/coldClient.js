@@ -53,7 +53,7 @@ module.exports = class coldClient extends Client {
      * Secret Client Token
      * @param {String} token 
      */
-    start(token) {
+    async start(token) {
 
         if (!token) throw new ReferenceError(this.error.token.undefined);
 
@@ -80,7 +80,7 @@ module.exports = class coldClient extends Client {
      * @param {Parameters} directory 
      */
 
-    loadCommands(directory) {
+    async loadCommands(directory) {
 
         if (!directory) throw new Error(this.error.directory.command);
 
@@ -92,7 +92,7 @@ module.exports = class coldClient extends Client {
      * @param {Parameters} directory 
      */
 
-    loadEvents(directory) {
+    async loadEvents(directory) {
 
         if (!directory) throw new Error(this.error.directory.event);
 
@@ -104,7 +104,7 @@ module.exports = class coldClient extends Client {
      * @param {Parameters} config
      */
 
-    setConfig(config) {
+    async setConfig(config) {
         this.config = config;
 
         return this;
@@ -114,7 +114,7 @@ module.exports = class coldClient extends Client {
      * Loads the message event to execute commands
      */
 
-    defaultExecute() {
+    async defaultExecute() {
 
         this.on("message", async message => {
             require("../events/cmdExecute")(this, message);
